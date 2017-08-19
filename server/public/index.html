@@ -8,7 +8,7 @@
     <title>Weekend Challenge 4</title>
 </head>
 
-<body ng-app="EmployeeFSApp" ng-controller="EmployeeFSController as vm">
+<body ng-app="EmployeeApp" ng-controller="EmployeeController as vm">
     <section class="container">
         <h1>Employees Full Stack Challenge</h1>
         <h3>Add A New Employee</h3>
@@ -29,7 +29,7 @@
             <label for="shoutout">Annual Salary</label>
             <input type="text" name="salary" class="form-control" ng-model="vm.newEmployee.salary" placeholder="Annual Salary"/>
           </div>
-          <button class="form-group col-md-12" ng-click="vm.createPerson()">Submit New Employee</Button>
+          <button class="form-group col-md-12" ng-click="vm.createNewEmployee()">Submit New Employee</Button>
         </form>
       </section>
 
