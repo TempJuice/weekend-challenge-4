@@ -24,7 +24,8 @@ app.controller('EmployeeController', ['$http', function ($http) {
             data: self.newEmployee
         }).then(function(response){
             console.log(response);
-            self.getEmployees
+            self.newEmployee = {};
+            self.getEmployees();
         })//end POST success
     };//end createNewEmployee()
 

@@ -2,36 +2,43 @@
 <html>
 
 <head>
-    <script type="text/javascript" src="vendors/angular.min.js"></script>
-    <script type="text/javascript" src="scripts/client.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
-    <title>Weekend Challenge 4</title>
+  <script type="text/javascript" src="vendors/angular.min.js"></script>
+  <script type="text/javascript" src="scripts/client.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+  <title>Weekend Challenge 4</title>
 </head>
 
 <body ng-app="EmployeeApp" ng-controller="EmployeeController as vm">
-    <section class="container">
-        <h1>Employees Full Stack Challenge</h1>
-        <h3>Add A New Employee</h3>
-        <form class="col-md-12">
-          <div class="form-group col-md-6">
-            <label for="firstName">First Name</label>
-            <input type="text" name="firstName" class="form-control" ng-model="vm.newEmployee.firstName" placeholder="First Name"/>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" class="form-control" ng-model="vm.newEmployee.lastName" placeholder="Last Name"/>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="jobTitle">Job Title</label>
-            <input type="text" name="jobTitle" class="form-control" ng-model="vm.newEmployee.jobTitle" placeholder="Job Title"/>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="shoutout">Annual Salary</label>
-            <input type="text" name="salary" class="form-control" ng-model="vm.newEmployee.salary" placeholder="Annual Salary"/>
-          </div>
-          <button class="form-group col-md-12" ng-click="vm.createNewEmployee()">Submit New Employee</Button>
-        </form>
-      </section>
+  <section class="container">
+    <h1>Employees Full Stack Challenge</h1>
+    <h3>Add A New Employee</h3>
+    <form class="col-md-12">
+      <div class="form-group col-md-6">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" class="form-control" ng-model="vm.newEmployee.firstName" placeholder="First Name" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" class="form-control" ng-model="vm.newEmployee.lastName" placeholder="Last Name" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" name="jobTitle" class="form-control" ng-model="vm.newEmployee.jobTitle" placeholder="Job Title" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="shoutout">Annual Salary</label>
+        <input type="text" name="salary" class="form-control" ng-model="vm.newEmployee.salary" placeholder="Annual Salary" />
+      </div>
+      <button class="form-group col-md-12" ng-click="vm.createNewEmployee()">Submit New Employee</Button>
+    </form>
+  </section>
+  <section class="container">
+      <h3>Employee List</h3>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="employee in vm.employees">
+        {{employee.firstname}} {{employee.lastname}} {{employee.jobtitle}} {{employee.salary}}
+    </li>
+  </div>
 
 </body>
 
