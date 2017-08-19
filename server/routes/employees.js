@@ -6,9 +6,11 @@ var pool = require('../modules/pool');
 router.post('/', function (req, res) {
     pool.connect(function (err, db, done) {
         if (err) {
+            // when connecting to database failed
             console.log('error connecting to database:', err);
             res.sendStatus(500);
         } else {
+            // when connecting to database worked
             db.query('INSERT INTO employees (firstname, lastname, jobtitle, salary) VALUES ($1, $2, $3, $4);',
                 [req.body.firstName, req.body.lastName, req.body.jobTitle, req.body.salary],
                 function (errorMakingQuery, results) {
@@ -24,16 +26,16 @@ router.post('/', function (req, res) {
     });//end pool.connect function
   });//end router.post
 
+  // GET /employees
   router.get('/', function(req, res) {
 	console.log('employee get was hit!');
-	// Add a SELECT query
 	pool.connect(function(err, db, done){
 		if(err) {
 			// when connecting to database failed
 			console.log('Error connecting to database', err);
 			res.sendStatus(500);
 		} else {
-			// when connecting to database worked!
+			// when connecting to database worked
 			db.query('SELECT * FROM employees;', function(err, result) {
 				done();
 				if(err) {
@@ -42,9 +44,9 @@ router.post('/', function (req, res) {
 				} else {
 					res.send(result.rows);
 				}
-			});
-		}
-	});
-});
+			});//end db.query
+        }//end pool.connect else statement
+    });//end pool.connect function
+  });//end router.get
 
   module.exports = router;

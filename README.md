@@ -11,11 +11,11 @@ The Employee's Last Name
 The Employee's Job Title
 The Employee's Salary (Yearly)
 
-- [ ] The form should have a submit button that clears out the form and your employees database should store that information.
+- [x] The form should have a submit button that clears out the form and your employees database should store that information.
 
-- [ ] Then, that information should be appended to the DOM so the user of the application can see the information they just entered.
+- [x] Then, that information should be appended to the DOM so the user of the application can see the information they just entered.
 
-- [ ] Your logic should calculate all of the employee salaries and report back what the monthly cost of salaries is.
+- [x] Your logic should calculate all of the employee salaries and report back what the monthly cost of salaries is.
 
 Hard Mode
 

@@ -33,13 +33,15 @@
     </form>
   </section>
   <section class="container">
-      <h3>Employee List</h3>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="employee in vm.employees">
+    <h3>Employee List</h3>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="employee in vm.employees">
         {{employee.firstname}} {{employee.lastname}} {{employee.jobtitle}} {{employee.salary}}
-    </li>
-  </div>
-
+      </li>
+      <li class="list-group-item">
+        Monthly Salary Expenditures : {{vm.average.monthly}} 
+      </li>
+  </section>
 </body>
 
 </html>
