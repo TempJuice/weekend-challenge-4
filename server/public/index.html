@@ -4,7 +4,8 @@
 <head>
   <script type="text/javascript" src="vendors/angular.min.js"></script>
   <script type="text/javascript" src="scripts/client.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
   <title>Weekend Challenge 4</title>
 </head>
 
@@ -12,10 +13,10 @@
   <section class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Employees Full Stack Challenge</h1>
-        <h3>Add A New Employee</h3>
+        <h1 class="text-center"><b><u>Employees Full Stack Challenge</b></u></h1>
       </div>
     </div>
+    <h3 class="lead text-center">Add A New Employee</h3>
     <div class="row">
       <form class="col-md-12">
         <div class="form-group col-md-6">
@@ -37,13 +38,13 @@
         <input type="text" name="salary" class="form-control" ng-model="vm.newEmployee.salary" placeholder="Annual Salary" />
       </div>
     </div>
-    <div class="row">
+    <div class="row well-md">
       <button class="form-group col-md-12" ng-click="vm.createNewEmployee()">Submit New Employee</Button>
     </div>
     </form>
   </section>
   <section class="container">
-    <h3>Employee List</h3>
+    <h3 class="text-center lead">Employee List</h3>
     <ul class="list-group">
       <li class="list-group-item">
         <div class="row">
@@ -56,9 +57,12 @@
           <div class="col-md-3">
             <b><u>JOB TITLE</b></u>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <b><u>ANNUAL SALARY</b></u>
           </div>
+          <div class="col-md-1">
+              <b><u>ACTIVE</b></u>
+            </div>
         </div>
       </li>
       <li class="list-group-item" ng-repeat="employee in vm.employees">
@@ -72,16 +76,20 @@
           <div class="col-md-3">
             {{employee.jobtitle}}
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             {{employee.salary}}
           </div>
+          <div class="col-md-1">
+              {{employee.active}}
+            </div>
         </div>
       </li>
       <div class="row">
-        <li class="list-group-item" class="col-md-12">
-          Monthly Salary Expenditures : {{vm.average.monthly}}
+        <li class="list-group-item text-center" class="col-md-12">
+            <b><u>Monthly Salary Expenditures :</b></u> {{vm.monthly.monthly}}
         </li>
       </div>
+    </ul>
   </section>
 </body>
 
