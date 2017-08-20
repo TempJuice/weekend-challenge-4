@@ -4,7 +4,6 @@ var pool = require('../modules/pool');
 
 // GET /monthly
 router.get('/', function(req, res) {
-	console.log('employee get was hit!');
 	// Add a SELECT query
 	pool.connect(function(err, db, done){
 		if(err) {
